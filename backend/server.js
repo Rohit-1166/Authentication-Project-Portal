@@ -13,7 +13,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+const mongoUri = process.env.MONGO_URI || process.env.MONGO_URL;
+if (!mongoUri) {
+  console.error('CRITICAL ERROR: Neither MONGO_URI nor MONGO_URL environment variable is defined!');
+  process.exit(1);
+}
+
+mongoose.connect(mongoUri)
   .then(() => console.log('Successfully connected to MongoDB.'))
   .catch((err) => {
     console.error('MongoDB connection error:', err);
