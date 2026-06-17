@@ -1,0 +1,47 @@
+# Dependency directories (Exclude NPM packages)
+node_modules/
+jspm_packages/
+
+# Production build outputs
+dist/
+dist-ssr/
+build/
+out/
+
+# Local Environment Secrets & Configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+auth-key.json
+
+# Submission ZIP archives & packages
+*.zip
+Authentication_Portal_Submission.zip
+
+# Server Uploads directory (Exclude user-submitted uploads)
+backend/uploads/
+
+# Build & packaging utility scripts
+zip_submission.js
+
+# IDEs, Editors & OS System Files
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# AI Agents system data
+.gemini/
+brain/
+.tempmediaStorage/
