@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download, CheckCircle, Award, BookOpen, ExternalLink, Loader } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function ProjectDocs({ addToast }) {
   const [projectInfo, setProjectInfo] = useState(null);
@@ -8,7 +9,7 @@ export default function ProjectDocs({ addToast }) {
   useEffect(() => {
     const fetchInfo = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/project/info');
+        const response = await fetch(`${API_BASE_URL}/api/project/info`);
         if (!response.ok) {
           throw new Error('Failed to fetch project specifications');
         }

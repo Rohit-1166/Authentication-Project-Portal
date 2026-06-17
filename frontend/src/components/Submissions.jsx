@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { File, Trash2, Download, CheckCircle, RefreshCw, FileArchive, ChevronDown, ChevronUp, Loader, AlertCircle } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function Submissions({ token, addToast }) {
   const [submissions, setSubmissions] = useState([]);
@@ -22,7 +23,7 @@ export default function Submissions({ token, addToast }) {
 
   const fetchSubmissions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/submissions', {
+      const response = await fetch(`${API_BASE_URL}/api/submissions`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -117,7 +118,7 @@ export default function Submissions({ token, addToast }) {
 
     try {
       const xhr = new XMLHttpRequest();
-      xhr.open('POST', 'http://localhost:5000/api/submissions/upload', true);
+      xhr.open('POST', `${API_BASE_URL}/api/submissions/upload`, true);
       xhr.setRequestHeader('Authorization', `Bearer ${token}`);
 
       xhr.upload.onprogress = (e) => {
@@ -180,7 +181,7 @@ export default function Submissions({ token, addToast }) {
     if (!window.confirm('Are you sure you want to delete this submission?')) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/submissions/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/submissions/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -201,7 +202,7 @@ export default function Submissions({ token, addToast }) {
   const handleDownload = async (id, filename, e) => {
     e.stopPropagation();
     try {
-      const response = await fetch(`http://localhost:5000/api/submissions/download/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/submissions/download/${id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 

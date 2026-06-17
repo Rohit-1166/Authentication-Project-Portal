@@ -5,6 +5,7 @@ import ProjectDocs from './components/ProjectDocs';
 import Submissions from './components/Submissions';
 import ApiSandbox from './components/ApiSandbox';
 import { CheckCircle2, ShieldCheck, FolderGit2, RefreshCw } from 'lucide-react';
+import { API_BASE_URL } from './config';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -62,7 +63,7 @@ export default function App() {
     if (!token) return;
     const checkSubmissions = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/submissions', {
+        const response = await fetch(`${API_BASE_URL}/api/submissions`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {
@@ -113,7 +114,7 @@ export default function App() {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:5000/api/auth/logout', {
+      await fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ refreshToken })
@@ -134,7 +135,7 @@ export default function App() {
 
   const executeRefresh = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/refresh', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/refresh`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ refreshToken })

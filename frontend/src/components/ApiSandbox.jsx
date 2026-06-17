@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Send, Key, RefreshCw, Layers } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function ApiSandbox({ token, refreshToken, onAuthSuccess, addToast }) {
   const [selectedEndpoint, setSelectedEndpoint] = useState('/login');
@@ -98,7 +99,7 @@ export default function ApiSandbox({ token, refreshToken, onAuthSuccess, addToas
     setResponseBody(null);
     setDecodedToken(null);
 
-    const endpointUrl = `http://localhost:5000/api/auth${selectedEndpoint}`;
+    const endpointUrl = `${API_BASE_URL}/api/auth${selectedEndpoint}`;
     const method = endpoints[selectedEndpoint].method;
     const reqHeaders = { 'Content-Type': 'application/json' };
     

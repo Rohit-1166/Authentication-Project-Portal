@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Shield, Mail, User, Lock, Eye, EyeOff, KeyRound, CheckCircle } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function AuthView({ onAuthSuccess, addToast }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -52,7 +53,7 @@ export default function AuthView({ onAuthSuccess, addToast }) {
       : { username: formData.username, email: formData.email, password: formData.password };
 
     try {
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`${API_BASE_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
