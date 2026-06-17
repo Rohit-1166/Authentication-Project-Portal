@@ -4,6 +4,13 @@
 
 A premium, glassmorphic Developer Assessment Portal built specifically as an **Intern Project Submission Portal**. It helps manage intern assignments, verify code compliance, inspect submitted ZIP files in real-time, and run security tests on API inputs. The system utilizes industry-standard security principles (rotating JWT token families) and in-memory ZIP code inspection.
 
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Active-dfb76c?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0d1425)](https://authentication-project-portal.vercel.app/)
+
+</div>
+
+
 ---
 
 ## 🚀 Key Features
