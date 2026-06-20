@@ -86,7 +86,7 @@ Authentication-Project/
 
 1. **Clone the repository**:
    ```bash
-   git clone <your-repository-url>
+   git clone "https://github.com/Rohit-1166/Authentication-Project-Portal/"
    cd Authentication-Project
    ```
 
@@ -133,17 +133,3 @@ node test_all_backend.js
 
 ---
 
-
-## 🌐 Production Deployment
-
-### 🐳 Backend Deployment (e.g. Render, Heroku)
-1. Add environment variables (`MONGO_URI`, `JWT_ACCESS_SECRET`, `JWT_REFRESH_SECRET`) in your hosting provider's dashboard settings.
-2. Set the build/start commands:
-   * **Build command**: `npm install`
-   * **Start command**: `node server.js` (inside `backend/` folder)
-
-### 🎨 Frontend Deployment (e.g. Vercel, Netlify)
-1. Configure your frontend to connect to your deployed backend URL. Change `http://localhost:5000` inside your components to your production API URL (best configured via React environment variables).
-2. Set the build output configurations:
-   * **Build command**: `npm run build`
-   * **Output directory**: `dist/`
