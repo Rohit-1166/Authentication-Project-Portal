@@ -166,7 +166,7 @@ export default function ApiSandbox({ token, refreshToken, onAuthSuccess, addToas
 
   return (
     <div style={styles.container} className="reveal-up">
-      <div style={styles.splitGrid}>
+      <div className="app-sandbox-split-grid">
         
         {/* Request Setup Panel */}
         <div className="glass-card" style={styles.panel}>

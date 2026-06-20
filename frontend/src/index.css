@@ -381,28 +381,210 @@ a:hover {
   animation: scan 4s ease-in-out infinite;
 }
 
-/* Responsive constraints */
+/* Responsive constraints & layout classes */
+
+/* Auth View Classes */
+.app-auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.app-auth-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  width: 100%;
+  max-width: 960px;
+  overflow: hidden;
+  border: 1px solid rgba(223, 183, 108, 0.08);
+}
+
+.app-form-section {
+  padding: 50px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(223, 183, 108, 0.04);
+}
+
+.app-info-section {
+  padding: 50px 48px;
+  background: rgba(6, 9, 17, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .app-auth-card {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+  .app-form-section {
+    padding: 40px 24px;
+    border-right: none;
+    border-bottom: 1px solid rgba(223, 183, 108, 0.04);
+  }
+  .app-info-section {
+    padding: 40px 24px;
+  }
+}
+
+/* Dashboard View Classes */
+.app-dashboard-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  background: var(--bg-main);
+}
+
+.app-sidebar {
+  background: rgba(6, 9, 17, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(223, 183, 108, 0.05);
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.app-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.app-sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 20px;
+}
+
+.app-main-content {
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.app-header-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 1024px) {
-  .dashboard-grid {
+  .app-dashboard-container {
     grid-template-columns: 1fr;
   }
-  .sidebar {
+  .app-sidebar {
     height: auto;
     position: relative;
     border-right: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(223, 183, 108, 0.05);
     padding: 24px;
   }
-  .main-content {
+  .app-sidebar-header {
+    margin-bottom: 24px;
+  }
+  .app-nav-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .app-nav-menu > button {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+  }
+  .app-sidebar-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .app-main-content {
     max-height: none;
-    padding: 30px;
+    padding: 32px 20px;
   }
 }
 
 @media (max-width: 640px) {
-  .main-content {
-    padding: 20px;
+  .app-nav-menu > button {
+    flex: 1 1 100%;
   }
+  .app-sidebar-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .app-header-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}
+
+/* API Sandbox Split Grid */
+.app-sandbox-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.25fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .app-sandbox-split-grid {
+    grid-template-grid: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Submission expanded items & report grid */
+.app-report-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .app-report-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Modal Card Responsiveness */
+.app-modal-card {
+  width: 92% !important;
+  max-width: 540px !important;
+  margin: 20px auto;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 /* Checkmark Drawing Animation */

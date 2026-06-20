@@ -81,10 +81,10 @@ export default function AuthView({ onAuthSuccess, addToast }) {
   };
 
   return (
-    <div style={styles.authWrapper}>
-      <div className="glass-card reveal-up" style={styles.authCard}>
+    <div className="app-auth-wrapper">
+      <div className="glass-card reveal-up app-auth-card">
         {/* Left Side: Forms */}
-        <div style={styles.formSection} className="reveal-up delay-1">
+        <div className="reveal-up delay-1 app-form-section">
           <div style={styles.header}>
             <div style={styles.logoContainer}>
               <Shield size={26} color="var(--primary)" />
@@ -197,7 +197,7 @@ export default function AuthView({ onAuthSuccess, addToast }) {
         </div>
 
         {/* Right Side: Visual Brand & Animated Svgator Illustration */}
-        <div style={styles.infoSection} className="reveal-up delay-2">
+        <div className="reveal-up delay-2 app-info-section">
           {/* Animated SVG Credential Vault (Svgator Style) */}
           <div style={styles.svgContainer}>
             <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">

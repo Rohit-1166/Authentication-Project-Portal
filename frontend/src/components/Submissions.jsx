@@ -337,7 +337,7 @@ export default function Submissions({ token, addToast }) {
       {/* Validation Simulation Modal Prompt Window */}
       {validationModal.isOpen && (
         <div style={styles.modalBackdrop}>
-          <div className="glass-card reveal-up" style={styles.modalCard}>
+          <div className="glass-card reveal-up app-modal-card" style={styles.modalCard}>
             
             {/* Modal Header */}
             <div style={styles.modalHeader}>
@@ -614,7 +614,7 @@ export default function Submissions({ token, addToast }) {
                   <div style={styles.expandedContent} onClick={(e) => e.stopPropagation()}>
                     <h5 style={styles.reportTitle}>Automated Inspection Report</h5>
                     
-                    <div style={styles.reportGrid}>
+                    <div className="app-report-grid">
                       <div style={styles.reportDetail}>
                         <span style={styles.reportLabel}>Sha-256 Checksum</span>
                         <span style={styles.reportValMono}>{submission.validationReport?.checksum || 'N/A'}</span>

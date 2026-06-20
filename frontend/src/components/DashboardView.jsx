@@ -49,10 +49,10 @@ export default function DashboardView({ user, onLogout, activeTab, setActiveTab,
   ];
 
   return (
-    <div style={styles.dashboardContainer}>
+    <div className="app-dashboard-container">
       {/* Sidebar */}
-      <aside style={styles.sidebar}>
-        <div style={styles.sidebarHeader} className="reveal-up">
+      <aside className="app-sidebar">
+        <div className="reveal-up app-sidebar-header">
           <div style={styles.logoCircle}>IP</div>
           <div>
             <h1 style={styles.brandTitle}>Portal</h1>
@@ -60,7 +60,7 @@ export default function DashboardView({ user, onLogout, activeTab, setActiveTab,
           </div>
         </div>
 
-        <nav style={styles.navMenu} className="reveal-up delay-1">
+        <nav className="reveal-up delay-1 app-nav-menu">
           {menuItems.map((item) => (
             <button
               key={item.id}
@@ -77,7 +77,7 @@ export default function DashboardView({ user, onLogout, activeTab, setActiveTab,
           ))}
         </nav>
 
-        <div style={styles.sidebarFooter} className="reveal-up delay-2">
+        <div className="reveal-up delay-2 app-sidebar-footer">
           <div style={styles.userCard}>
             <div style={styles.avatar}>
               <User size={16} color="var(--primary)" />
@@ -95,9 +95,9 @@ export default function DashboardView({ user, onLogout, activeTab, setActiveTab,
       </aside>
 
       {/* Main Dashboard Section */}
-      <main style={styles.mainContent}>
+      <main className="app-main-content">
         {/* Top Header Banner / Stats */}
-        <header style={styles.headerBanner} className="reveal-up">
+        <header className="reveal-up app-header-banner">
           <div style={styles.welcomeText}>
             <h2 className="text-gradient-gold" style={styles.headerTitle}>Active Assignment</h2>
             <p style={styles.headerSubtitle}>Complete your security backend authentication project</p>
